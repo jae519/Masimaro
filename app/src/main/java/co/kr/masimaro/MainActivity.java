@@ -9,18 +9,20 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 
-import org.kr.masimaro.R;
+import com.kakao.usermgmt.LoginButton;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
+    private LoginButton btn_kakao_login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
 
         //Hashkey 받아오는 부분. 카카오톡에 로그인 정보 올리기 위해 필요
         //getHashKey();
