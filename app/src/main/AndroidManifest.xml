@@ -20,7 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name="ir.shahabazimi.instagrampicker.gallery.SelectActivity" />
+        <activity android:name="ir.shahabazimi.instagrampicker.filter.FilterActivity" />
+        <activity android:name="ir.shahabazimi.instagrampicker.gallery.MultiSelectActivity"/>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="53243b8d48e79fcf14a3438ed51ac849" />

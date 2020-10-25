@@ -1,4 +1,5 @@
 package co.kr.masimaro;
+import android.content.Intent;
 import android.util.Log;
 
 import com.kakao.auth.ISessionCallback;
@@ -17,6 +18,7 @@ public class SessionCallback implements ISessionCallback {
     @Override
     public void onSessionOpened() {
         requestMe();
+        MainActivity.launch("text message");
     }
 
     // 로그인에 실패한 상태
@@ -67,15 +69,30 @@ public class SessionCallback implements ISessionCallback {
                                 Log.d("KAKAO_API", "nickname: " + profile.getNickname());
                                 Log.d("KAKAO_API", "profile image: " + profile.getProfileImageUrl());
                                 Log.d("KAKAO_API", "thumbnail image: " + profile.getThumbnailImageUrl());
-
+                                UserVO.getInstance().setEmail(email);
+                                UserVO.getInstance().setUserName(profile.getNickname());
                             } else if (kakaoAccount.profileNeedsAgreement() == OptionalBoolean.TRUE) {
+                                Log.d("KAKAO_API", "프로파일 동의 요청 필요");
                                 // 동의 요청 후 프로필 정보 획득 가능
 
                             } else {
                                 // 프로필 획득 불가
+                                Log.d("KAKAO_API", "프로필 획득 불가");
                             }
+
+
+
+
                         }
+
+
+
+
+
                     }
                 });
+        /*Intent intent = new Intent(getApplicationContext(), UserRegActivity.class);
+        Log.d("MainActivity", "onActivityResult called!!!!!!!");
+        startActivity(intent);*/
     }
 }
