@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Masimaro</string>
     <string name="kakao_app_key">53243b8d48e79fcf14a3438ed51ac849</string>
+    <string name="textAdd">+</string>
 </resources>

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import ir.shahabazimi.instagrampicker.InstagramPicker;
+//import ir.shahabazimi.instagrampicker.InstagramPicker;
 
 public class UserRegActivity extends AppCompatActivity {
 
@@ -12,7 +12,7 @@ public class UserRegActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_reg);
-
+        /*
         InstagramPicker in = new InstagramPicker(UserRegActivity.this);
         in.show(1,1,5, addresses ->  {
 
@@ -21,7 +21,7 @@ public class UserRegActivity extends AppCompatActivity {
 
 
         });
-
+        */
 
     }
 }
