@@ -2,4 +2,7 @@
     <string name="app_name">Masimaro</string>
     <string name="kakao_app_key">53243b8d48e79fcf14a3438ed51ac849</string>
     <string name="textAdd">+</string>
+    <string name="title_activity_image_picker">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

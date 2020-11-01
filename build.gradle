@@ -22,7 +22,8 @@ allprojects {
         jcenter()
         /*카카오*/
         maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
-        //maven { url 'https://jitpack.io' }
+        maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
+        maven { url "https://jitpack.io" }
     }
 }
 
