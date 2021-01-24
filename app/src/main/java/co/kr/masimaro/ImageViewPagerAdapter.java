@@ -40,9 +40,9 @@ public class ImageViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View view = null ;
 
-        int cameraPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
-        int writeExternalStoragePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        int readExternalStoragePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE);
+        //int cameraPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
+        //int writeExternalStoragePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        //int readExternalStoragePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE);
 
         if (mContext != null) {
             // LayoutInflater를 통해 "/res/layout/page.xml"을 뷰로 생성.
@@ -51,13 +51,13 @@ public class ImageViewPagerAdapter extends PagerAdapter {
             if (image_uris != null){
                 ImageView imageView = (ImageView) view.findViewById(R.id.imageSection) ;
                 File imgFile = new File(image_uris.get(position).getPath());
-                Log.d("instantiateItem","그리기 전 ");
+                //Log.d("instantiateItem","그리기 전 ");
                 if(imgFile.exists()){
-                    Log.d("instantiateItem","그리는 중 ");
+                    //Log.d("instantiateItem","그리는 중 ");
                     Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
                     imageView.setImageBitmap(myBitmap);
                 }
-                Log.d("instantiateItem","그리고 난 후 ");
+                //Log.d("instantiateItem","그리고 난 후 ");
             }
 
 
@@ -81,7 +81,7 @@ public class ImageViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        // 전체 페이지 수는 10개로 고정.
+        // 전체 페이지 수는 3개로 고정.
         return 3;
     }
 

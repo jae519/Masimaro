@@ -1,5 +1,4 @@
 package co.kr.masimaro;
-import android.content.Intent;
 import android.util.Log;
 
 import com.kakao.auth.ISessionCallback;
@@ -11,6 +10,8 @@ import com.kakao.usermgmt.response.model.Profile;
 import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
+
+import co.kr.masimaro.vo.CustomerVO;
 
 public class SessionCallback implements ISessionCallback {
 
@@ -69,8 +70,8 @@ public class SessionCallback implements ISessionCallback {
                                 Log.d("KAKAO_API", "nickname: " + profile.getNickname());
                                 Log.d("KAKAO_API", "profile image: " + profile.getProfileImageUrl());
                                 Log.d("KAKAO_API", "thumbnail image: " + profile.getThumbnailImageUrl());
-                                UserVO.getInstance().setEmail(email);
-                                UserVO.getInstance().setUserName(profile.getNickname());
+                                CustomerVO.getInstance().setEmail(email);
+                                CustomerVO.getInstance().setUserName(profile.getNickname());
                             } else if (kakaoAccount.profileNeedsAgreement() == OptionalBoolean.TRUE) {
                                 Log.d("KAKAO_API", "프로파일 동의 요청 필요");
                                 // 동의 요청 후 프로필 정보 획득 가능

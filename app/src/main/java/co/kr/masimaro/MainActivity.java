@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.PendingIntent;
@@ -17,13 +16,16 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.kakao.auth.Session;
-import com.kakao.usermgmt.LoginButton;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import co.kr.masimaro.onrreg.OnrRegActivity;
+import co.kr.masimaro.usrreg.UserRegActivity;
 
 public class MainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
 
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
     static View mLayout;
 
-    private LoginButton btn_kakao_login;
+    private Button onrLoginBtn;
 
     private SessionCallback sessionCallback = new SessionCallback();
     Session session;
@@ -56,10 +58,27 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         super.onCreate(savedInstanceState);
         mLayout = findViewById(R.id.main_layout);
         setContentView(R.layout.activity_main);
-        btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
+        //btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
+
+        GlobalDepository.getInstance().initialize();
 
         session = Session.getCurrentSession();
         session.addCallback(sessionCallback);
+
+        Button onrLoginBtn = (Button) findViewById(R.id.onrLoginBtn);
+
+
+        onrLoginBtn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intentSubActivity =
+                        new Intent(MainActivity.this, OnrRegActivity.class);
+                startActivity(intentSubActivity);
+            }
+        });
+
+
+
 
         //Hashkey 받아오는 부분. 카카오톡에 로그인 정보 올리기 위해 필요
         //getHashKey();
@@ -68,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
 
             // 1. 카메라 퍼미션과 외부 저장소 퍼미션을 가지고 있는지 체크합니다.
+            /*
             int cameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
             int writeExternalStoragePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
             int readExternalStoragePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
@@ -110,7 +130,11 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                             PERMISSIONS_REQUEST_CODE);
                 }
 
+
+
             }
+
+             */
 
         /*} else {
 

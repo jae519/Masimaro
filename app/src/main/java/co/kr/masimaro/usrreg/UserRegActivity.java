@@ -1,4 +1,4 @@
-package co.kr.masimaro;
+package co.kr.masimaro.usrreg;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -17,6 +17,9 @@ import android.widget.Button;
 import com.gun0912.tedpicker.ImagePickerActivity;
 
 import java.util.ArrayList;
+
+import co.kr.masimaro.ImageViewPagerAdapter;
+import co.kr.masimaro.R;
 
 //import ir.shahabazimi.instagrampicker.InstagramPicker;
 
@@ -74,8 +77,8 @@ public class UserRegActivity extends AppCompatActivity {
 
 
             Log.d("UserRegActivity", "Image1 : " + image_uris.get(0).getPath());
-            Log.d("UserRegActivity", "Image2 : " + image_uris.get(0).getPath());
-            Log.d("UserRegActivity", "Image3 : " + image_uris.get(0).getPath());
+            Log.d("UserRegActivity", "Image2 : " + image_uris.get(1).getPath());
+            Log.d("UserRegActivity", "Image3 : " + image_uris.get(2).getPath());
             //do something
         }
     }

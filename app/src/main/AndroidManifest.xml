@@ -9,7 +9,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -17,16 +17,24 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:requestLegacyExternalStorage="true"
-        >
-        <activity android:name=".ImagePickerHolder"></activity>
+        android:usesCleartextTraffic="true">
+        <activity android:name=".shopreg.ShopReg1"></activity>
+        <activity android:name=".onrreg.OnrRegWaiting" />
+        <activity android:name=".AddressActivity" />
+        <activity android:name=".onrreg.OnrRegShopActivity3" />
+        <activity android:name=".onrreg.OnrRegShopActivity2" />
+        <activity android:name=".onrreg.OnrRegShopActivity1" />
+        <activity android:name=".onrreg.OnrRegIdPwActivity" />
+        <activity android:name=".onrreg.OnrRegActivity" />
+        <activity android:name=".ImagePickerHolder" />
         <activity
             android:name="com.gun0912.tedpicker.ImagePickerActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UserRegActivity" />
+        <activity android:name=".usrreg.UserRegActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,8 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
