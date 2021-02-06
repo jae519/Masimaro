@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.kr.masimaro.shopreg.ShopReg1">
+    tools:context="co.kr.masimaro.shopreg.ShopReg2">
 
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="심사가 완료되었습니다!"
+        android:text="어떤 메뉴를 제공하시나요?"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,55 +23,78 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="가게 소개하기(1/2)"
+        android:text="가게 소개하기(2/2)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
 
-    <EditText
-        android:id="@+id/EdTextShopName"
-        android:layout_width="200sp"
-        android:layout_height="30sp"
-        android:background="@drawable/image_add_background2"
-        android:paddingLeft="10sp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/subTitleText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="미리 메뉴를 등록하신 후\n티켓 판매 시 선택 할 수 있습니다.\n(프로필에서 수정 가능)"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@id/textShopName"
-        app:layout_constraintTop_toBottomOf="@id/subTitleText"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTitleText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="358dp"
+        app:layout_constraintTop_toBottomOf="@+id/subTitleText2"
+        />
+
 
     <EditText
-        android:id="@+id/edTextOnrIntro"
-        android:layout_width="296dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/image_add_background"
+        android:id="@+id/edTextAddMenu"
+        android:layout_width="275dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
-        android:gravity="start"
-        android:hint="가게 소개글*(150~600자)"
+        android:hint="메뉴 추가"
         android:inputType="textPersonName"
-        android:padding="10dp"
-        android:paddingLeft="8sp"
-        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toEndOf="@+id/buttonAddShopImg2"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewMenu" />
+
+    <Button
+        android:id="@+id/buttonAddShopImg2"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="56dp"
+
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/image_add_button_gray"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/textAdd"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textOnrIntro" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewMenu" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/innerConstraintLayout"
         android:layout_width="300dp"
         android:layout_height="135dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/image_add_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edTextOnrIntro">
+        app:layout_constraintTop_toBottomOf="@+id/edTextAddMenu">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
@@ -120,73 +143,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textShopName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="가게명"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subTitleText"
-        app:layout_constraintVertical_bias="0.057" />
-
-    <TextView
-        android:id="@+id/textOnrIntro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="108dp"
-        android:text="사장님 한마디"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textShopName" />
-
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="322dp"
         android:layout_height="43dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#42e9f5"
         android:text="다음"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/innerConstraintLayout" />
-
-    <TextView
-        android:id="@+id/textShopAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="가게주소"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textShopName"
-        app:layout_constraintVertical_bias="0.038" />
-
-    <EditText
-        android:id="@+id/edTextShopAddress"
-        android:layout_width="200sp"
-        android:layout_height="30sp"
-        android:background="@drawable/image_add_background2"
-        android:paddingLeft="10sp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toEndOf="@id/textShopAddress"
-        app:layout_constraintTop_toBottomOf="@id/EdTextShopName"
-        app:layout_constraintVertical_bias="0.027" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,6 +61,9 @@ public class OnrRegShopActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //필수항목 체크 필요
+                Intent intentSubActivity =
+                        new Intent(OnrRegShopActivity3.this, OnrRegWaiting.class);
+                startActivity(intentSubActivity);
 
             }
         });
