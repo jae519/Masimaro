@@ -30,19 +30,63 @@
 
 
     <EditText
-        android:id="@+id/EdTextShopName"
+        android:id="@+id/edTextShopName"
         android:layout_width="200sp"
-        android:layout_height="30sp"
+        android:layout_height="wrap_content"
+
         android:background="@drawable/image_add_background2"
         android:paddingLeft="10sp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toEndOf="@id/textShopName"
+        app:layout_constraintTop_toBottomOf="@id/subTitleText"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <EditText
+        android:id="@+id/edTextShopAddress"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/image_add_background2"
+        android:paddingLeft="10sp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toEndOf="@id/textShopAddress"
+        app:layout_constraintTop_toBottomOf="@id/edTextShopName"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/textShopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가게명"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@id/textShopName"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subTitleText"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.041" />
+
+    <TextView
+        android:id="@+id/textShopAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가게주소"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTextShopName"
+        app:layout_constraintVertical_bias="0.039" />
 
     <EditText
         android:id="@+id/edTextOnrIntro"
@@ -121,30 +165,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textShopName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="가게명"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subTitleText"
-        app:layout_constraintVertical_bias="0.057" />
-
-    <TextView
         android:id="@+id/textOnrIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="32dp"
         android:text="사장님 한마디"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textShopName" />
+        app:layout_constraintTop_toBottomOf="@+id/edTextShopAddress" />
 
     <Button
         android:id="@+id/btnConfirm"
@@ -158,35 +188,6 @@
         app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/innerConstraintLayout" />
-
-    <TextView
-        android:id="@+id/textShopAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="가게주소"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textShopName"
-        app:layout_constraintVertical_bias="0.038" />
-
-    <EditText
-        android:id="@+id/edTextShopAddress"
-        android:layout_width="200sp"
-        android:layout_height="30sp"
-        android:background="@drawable/image_add_background2"
-        android:paddingLeft="10sp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toEndOf="@id/textShopAddress"
-        app:layout_constraintTop_toBottomOf="@id/EdTextShopName"
-        app:layout_constraintVertical_bias="0.027" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

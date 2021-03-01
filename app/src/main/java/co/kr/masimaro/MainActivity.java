@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         setContentView(R.layout.activity_main);
         //btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
 
-        GlobalDepository.getInstance().initialize();
+        //GlobalDepository.getInstance().initialize();
 
         session = Session.getCurrentSession();
         session.addCallback(sessionCallback);

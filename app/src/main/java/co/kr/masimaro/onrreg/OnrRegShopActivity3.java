@@ -7,15 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import co.kr.masimaro.AddressActivity;
+import co.kr.masimaro.GlobalDepository;
 import co.kr.masimaro.R;
 
 public class OnrRegShopActivity3 extends AppCompatActivity {
 
-    TextView exTextAddress;
+    TextView edTextAddress;
+    EditText edTextShopName;
+    EditText edTextAddressDetail;
+
     private static final int SEARCH_ADDRESS_ACTIVITY = 10000;
     Spinner bankSpinner;
 
@@ -25,16 +30,19 @@ public class OnrRegShopActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onr_reg_shop3);
-        exTextAddress = (TextView)findViewById(R.id.textViewAddress);
+        edTextAddress = (TextView)findViewById(R.id.textViewAddress);
         bankSpinner = (Spinner)findViewById(R.id.bankSpinner);
 
-        exTextAddress.setOnClickListener(new View.OnClickListener(){
+        edTextAddress.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(OnrRegShopActivity3.this, AddressActivity.class);
                 startActivityForResult(i, SEARCH_ADDRESS_ACTIVITY);
             }
         });
+
+        edTextShopName = (EditText)findViewById(R.id.edTextShopName);
+        edTextAddressDetail = (EditText)findViewById(R.id.edTextAddressDetail);
 
 
 
@@ -61,6 +69,8 @@ public class OnrRegShopActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //필수항목 체크 필요
+                GlobalDepository.getInstance().shopName = new String(edTextShopName.getText().toString());
+                GlobalDepository.getInstance().shopLoc = new String(edTextAddress.getText().toString() + " " + edTextAddressDetail.getText().toString());
                 Intent intentSubActivity =
                         new Intent(OnrRegShopActivity3.this, OnrRegWaiting.class);
                 startActivity(intentSubActivity);
@@ -84,7 +94,7 @@ public class OnrRegShopActivity3 extends AppCompatActivity {
 
                     String data = intent.getExtras().getString("data");
                     if (data != null)
-                        exTextAddress.setText(data);
+                        edTextAddress.setText(data);
 
                 }
                 break;

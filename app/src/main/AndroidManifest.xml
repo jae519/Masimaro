@@ -22,8 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".shopreg.ShopReg2"></activity>
-        <activity android:name=".shopreg.ShopReg1"></activity>
+        <activity android:name=".loc.SelectLocActivity"></activity>
+        <activity android:name=".shopreg.ShopReg2" />
+        <activity android:name=".shopreg.ShopReg1" />
         <activity android:name=".onrreg.OnrRegWaiting" />
         <activity android:name=".AddressActivity" />
         <activity android:name=".onrreg.OnrRegShopActivity3" />

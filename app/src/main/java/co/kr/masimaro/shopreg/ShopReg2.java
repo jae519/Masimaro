@@ -1,5 +1,6 @@
 package co.kr.masimaro.shopreg;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import co.kr.masimaro.R;
+import co.kr.masimaro.loc.SelectLocActivity;
 import co.kr.masimaro.vo.FoodItemVO;
 
 public class ShopReg2 extends AppCompatActivity {
@@ -21,6 +23,7 @@ public class ShopReg2 extends AppCompatActivity {
     ArrayList<FoodItemVO> mList = new ArrayList<FoodItemVO>();
     Button buttonAddShopMenu;
     EditText edText;
+    Button btnConfirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class ShopReg2 extends AppCompatActivity {
         buttonAddShopMenu = findViewById(R.id.buttonAddShopMenu);
         edText = findViewById(R.id.edTextAddMenu);
 
+        btnConfirm = (Button)findViewById(R.id.btnConfirm);
+
 
         buttonAddShopMenu.setOnClickListener(new Button.OnClickListener(){
 
@@ -42,9 +47,21 @@ public class ShopReg2 extends AppCompatActivity {
             public void onClick(View v) {
 
                 FoodItemVO fiVO = new FoodItemVO(true, edText.getText().toString());
-
                 mList.add(fiVO);
                 foodItemAdapter.notifyDataSetChanged();
+                edText.getText().clear();
+            }
+        });
+
+        btnConfirm = (Button)findViewById(R.id.btnConfirm);
+
+        btnConfirm.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intentSubActivity =
+                        new Intent(ShopReg2.this, SelectLocActivity.class);
+                startActivity(intentSubActivity);
+                //finish();
             }
         });
 
