@@ -10,6 +10,7 @@ public class GlobalDepository {
 
 
     private static GlobalDepository globalDepository;
+    private ArrayList<String> keyLocList;
     private HashMap<String, ArrayList<String>> locList;
 
     //imsi variables
@@ -25,6 +26,13 @@ public class GlobalDepository {
 
 
     public GlobalDepository(){
+        keyLocList = new ArrayList<String>();
+        keyLocList.add("서울");
+        keyLocList.add("경기");
+        keyLocList.add("대구");
+        keyLocList.add("울산");
+
+
         locList = new HashMap<String, ArrayList<String>>();
         ArrayList<String> alSeoul = new ArrayList<>();
         alSeoul.add("강남/역삼/삼성/논현");
@@ -39,14 +47,14 @@ public class GlobalDepository {
         alGyunggi.add("성남/분당/위례");
         locList.put("경기",alGyunggi);
         ArrayList<String> alDaegu = new ArrayList<>();
-        alDaegu.add("동성로/서문시장/대구시청/삼덕동/교동/종로");
-        alDaegu.add("대구역/칠성시작/경북대/엙스코/칠곡지구/태전동/금호지구");
-        alDaegu.add("동대구역/고속버스터미널/신청동/신암동");
-        alDaegu.add("대구공항/혁신도시/동촌유원지/팔공산/아시아폴리스");
+        alDaegu.add("동성로/서문시장/대구시청");
+        alDaegu.add("대구역/칠성시작/경북대");
+        alDaegu.add("동대구역/고속버스터미널");
+        alDaegu.add("대구공항/혁신도시");
         locList.put("대구",alDaegu);
         ArrayList<String> alOlsan = new ArrayList<>();
-        alOlsan.add("남구/중구(삼산/성남/무거/신정)");
-        alOlsan.add("동구/북구/울주군(일산/진장/진하/KTX역/영남알프스)");
+        alOlsan.add("남구/중구(삼산/성남/무거)");
+        alOlsan.add("동구/북구/울주군");
         locList.put("울산",alOlsan);
 
 
@@ -55,4 +63,5 @@ public class GlobalDepository {
     public HashMap<String, ArrayList<String>> getLocList() {
         return locList;
     }
+    public ArrayList<String> getKeyLocList() {return keyLocList;}
 }

@@ -11,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import co.kr.masimaro.GlobalDepository;
 import co.kr.masimaro.R;
 import co.kr.masimaro.vo.AddressVO;
 
@@ -48,8 +50,11 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
         holder.textView.setOnClickListener(new TextView.OnClickListener(){
             @Override
             public void onClick(View v) {
+                if (lastSelected == position)
+                    return;
+                String newLoc = holder.textView.getText().toString();
 
-                Log.e("loclog", holder.textView.getText().toString());
+                Log.e("loclog", newLoc);
 
                 //selected 상태 변경
 
@@ -58,6 +63,13 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
                 lastSelected = position;
                 addressAdapter.notifyDataSetChanged();
 
+                //RecyclerView2 상태 변경
+                HashMap<String, ArrayList<String>> locList = GlobalDepository.getInstance().getLocList();
+                SelectLocActivity.mDataDtl.clear();
+                for (String addrDtl : locList.get(newLoc)){
+                    SelectLocActivity.mDataDtl.add(addrDtl);
+                }
+                SelectLocActivity.addressDtlAdapter.notifyDataSetChanged();
 
             }
         });
